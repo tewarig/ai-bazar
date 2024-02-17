@@ -33,6 +33,9 @@ export default async function Page({ params    }) {
     return <div>
       <div className="flex flex-row  justify-start">
       <div className="font-semibold text-3xl"> 
+      Org name  &nbsp;/&nbsp; 
+      </div>
+      <div className="font-semibold text-3xl"> 
       Model Name  
       </div>
       <Button size="sm" variant="ghost"> 
@@ -59,7 +62,19 @@ export default async function Page({ params    }) {
       </div>
       </div>
   <div className="border-b my-4"></div>
-  <Markdown>{markdown}</Markdown>
+  <Tabs defaultValue="description" className="">
+  <TabsList>
+    <TabsTrigger value="description">Description</TabsTrigger>
+    <TabsTrigger value="about">About </TabsTrigger>
+    <TabsTrigger value="example">Example </TabsTrigger>
+
+  </TabsList>
+  <TabsContent value="description"><Markdown>{markdown}</Markdown></TabsContent>
+  <TabsContent value="about">about</TabsContent>
+  <TabsContent value="example">example</TabsContent>
+
+</Tabs>
+
 
     </div>
   }

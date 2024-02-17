@@ -36,19 +36,14 @@ export default function Navbar() {
             state ? "block" : "hidden"
           }`}
         >
-          <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-            {menus.map((item, idx) => (
-              <li key={idx} className="text-gray-600 hover:text-indigo-600 underline-offset-8 ">
-                <Link href={item.path}>{item.title}</Link>
-              </li>
-            ))}
-            <form className="flex items-center  space-x-2 border rounded-md p-2">
-              <Search className="h-5 w-5 flex-none text-gray-300" />
-              <input
-                className="w-full outline-none appearance-none placeholder-gray-500 text-gray-500 sm:w-auto"
-                type="text"
-                placeholder="Search"
-              />
+          <ul className=" justify-end items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+            <form className="flex items-center  space-x-2 border rounded-md p-2 font-medium text-muted-foreground opacity-100">
+              <Search className="h-5 w-5 flex-none text-gray-300 mr-4" />
+              Press
+              <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+              <span className="text-xs">⌘</span>k
+             </kbd>
+             &nbsp; to search
             </form>
           </ul>
         </div>
