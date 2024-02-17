@@ -1,5 +1,6 @@
 "use client";
 import React ,  { useEffect, useState } from "react"
+import Link from "next/link";
 import {
     Card,
     CardContent,
@@ -9,10 +10,9 @@ import {
     CardTitle,
   } from '@/components/ui/card';
 
-function CategoriesCard({ Icon , title , description}) {
-   
-   
+function CategoriesCard({ Icon , title , description , categoryId}) {
   return (
+<Link href={`/categories/${categoryId}`}>
 <CardContent className="grid gap-4 w-fit ">
 <div className=" flex items-center space-x-4 rounded-md border p-4 hover:cursor-pointer">
    {Icon} 
@@ -29,6 +29,7 @@ function CategoriesCard({ Icon , title , description}) {
 <div>
 </div>
 </CardContent>
+</Link>
   )
 }
 

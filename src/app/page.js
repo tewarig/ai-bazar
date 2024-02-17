@@ -61,7 +61,7 @@ export default function Home() {
     <div>
       <div className="flex  justify-between items-center">
       <div className="font-semibold text-3xl"> Trending Models </div>
-      <div className="hover:cursor-pointer"> see more</div>
+      <div className="hover:cursor-pointer hover:underline-offset-8"> see more</div>
       </div>
      <div className="py-8 flex flex-wrap gap-2">
       <ModelCard name="Sora" description="Make long Videos upto 1 min" imageUrl="https://utfs.io/f/4b3e5af2-4937-4f96-89d9-3a5b36382caa-23sln.avif" />
