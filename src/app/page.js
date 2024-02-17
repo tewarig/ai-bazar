@@ -48,17 +48,17 @@ export default function Home() {
   return (
     <div className="h-screen w-screen flex flex-col justify-center items-center  text-center">
       <div className="flex w-full items-center space-x-2  sm:max-w-sm sm:p-8 md:max-w-md lg:max-w-lg xl:max-w-xl">
-        <Input type="search" placeholder="Search" />
-        <Button type="submit"><Search size={24} strokeWidth={2} /></Button>
+        <Input type="search" placeholder="Search" className="drop-shadow-lg" />
+        <Button type="submit"><Search size={24} strokeWidth={2} className="drop-shadow-lg" /></Button>
       </div>
-      <div className="flex w-full max-w-sm items-center justify-center space-x-2">
-        <Badge variant="outline">Badge</Badge>
+      <div className="flex w-full max-w-sm items-center justify-center space-x-2 ">
+        <Badge variant="outline" className="drop-shadow-md">Badge</Badge>
         <Badge variant="outline">Badge</Badge>
         <Badge variant="outline">Badge</Badge>
         <Badge variant="outline">Badge</Badge>
       </div>
       <div className="mt-8">
-        <Card className="p-4 flex flex-col justify-center align-center  gap-2 text-center "> 
+        <Card className="p-4 flex flex-col justify-center align-center  gap-2 text-center drop-shadow-sm "> 
           
          <h1 className=" text-pretty   font-semibold"> Trending Today</h1>
          <div className="flex flex-col  max-h-32 flex-wrap  min-w-40"> 
@@ -66,7 +66,7 @@ export default function Home() {
             trending.map((item,index) => (
               <div key={item.id} >
                 <span className=""> {index + 1} </span>.
-                <span className=" cursor-pointer hover:underline "> {item.title}</span> 
+                <span className="cursor-pointer hover:underline "> {item.title}</span> 
               </div>
             ))
          }̦
