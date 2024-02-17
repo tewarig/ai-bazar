@@ -1,7 +1,11 @@
-import { Search } from 'lucide-react';
+import * as lucide from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { BellRing, Check } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { FileVideo, AudioLines, Images } from "lucide-react";
+import Image from 'next/image';
 import {
   Card,
   CardContent,
@@ -10,73 +14,62 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import Navbar from '@/components/ui/navbar';
+import  CategoriesCard  from '@/components/ui/categoriesCard';
+import ModelCard from '@/components/ui/modelCard';
 
-const trending = [
-  {
-    id: 1,
-    title: 'The best of the best',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    tags: ['best', 'top'],
-  },
-  {
-    id: 2,
-    title: 'The best of the best',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    tags: ['best', 'top'],
-  },
-  {
-    id: 3,
-    title: 'The best of the best',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    tags: ['best', 'top'],
-  },
-  {
-    id: 4,
-    title: 'The best of the best',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    tags: ['best', 'top'],
-  },
-  {
-    id: 5,
-    title: 'The best of the best',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    tags: ['best', 'top'],
-  }, 
-];
 
 export default function Home() {
+ 
+  const categories = [
+    {
+    id: 1,
+    icon: <FileVideo/>,
+    title: "Text to Video",
+    description : "Convert text to video"
+    },
+    {
+     id: 2,
+     icon: <AudioLines/>,
+     title: "Text to Audio",
+     description : "Convert text to audio"
+    },{
+      id: 3,
+      icon:  <Images/>,
+      title: "Text to Image",
+      description : "Convert text to image"
+    },
+    {
+      id: 4,
+      icon: <Images/>,
+      title: "Open Source Models",
+      description: "Top Free Models",
+    }
+  ]
   return (
-    <div className="h-screen w-screen flex flex-col justify-center items-center  text-center">
-      <div className="flex w-full items-center space-x-2  sm:max-w-sm sm:p-8 md:max-w-md lg:max-w-lg xl:max-w-xl">
-        <Input type="search" placeholder="Search" className="drop-shadow-lg" />
-        <Button type="submit"><Search size={24} strokeWidth={2} className="drop-shadow-lg" /></Button>
-      </div>
-      <div className="flex w-full max-w-sm items-center justify-center space-x-2 ">
-        <Badge variant="outline" className="drop-shadow-md">Badge</Badge>
-        <Badge variant="outline">Badge</Badge>
-        <Badge variant="outline">Badge</Badge>
-        <Badge variant="outline">Badge</Badge>
-      </div>
-      <div className="mt-8">
-        <Card className="p-4 flex flex-col justify-center align-center  gap-2 text-center drop-shadow-sm "> 
-          
-         <h1 className=" text-pretty   font-semibold"> Trending Today</h1>
-         <div className="flex flex-col  max-h-32 flex-wrap  min-w-40"> 
-         {
-            trending.map((item,index) => (
-              <div key={item.id} >
-                <span className=""> {index + 1} </span>.
-                <span className="cursor-pointer hover:underline "> {item.title}</span> 
-              </div>
-            ))
-         }̦
-         </div>
-         <div className="flex flex-col  max-h-32 flex-wrap cursor-pointer hover:underline  font-normal">
-          View More
-          </div>
-        </Card>
-      </div>
-
+   <div> 
+    <div>
+     <div className="font-semibold text-3xl"> Top categories </div>
+     <div className="py-8 flex flex-wrap">
+      {
+        categories.map((category) => (
+          <CategoriesCard key={category.id}  categoryIconName={category.icon} title={category.title} description={category.description} />
+        ))
+      }
+     </div>
     </div>
+    <div>
+      <div className="flex  justify-between items-center">
+      <div className="font-semibold text-3xl"> Trending Models </div>
+      <div className="hover:cursor-pointer"> see more</div>
+      </div>
+     <div className="py-8 flex flex-wrap gap-2">
+      <ModelCard name="Sora" description="Make long Videos upto 1 min" imageUrl="https://utfs.io/f/4b3e5af2-4937-4f96-89d9-3a5b36382caa-23sln.avif" />
+      <ModelCard name="Sora" description="Make long Videos upto 1 min" imageUrl="https://utfs.io/f/4b3e5af2-4937-4f96-89d9-3a5b36382caa-23sln.avif" />
+      <ModelCard name="Sora" description="Make long Videos upto 1 min" imageUrl="https://utfs.io/f/4b3e5af2-4937-4f96-89d9-3a5b36382caa-23sln.avif" />
+
+     </div>
+    </div>
+   </div>
   );
 }
