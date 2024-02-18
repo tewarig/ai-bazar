@@ -3,7 +3,7 @@ import { humanize } from "@/lib/utils";
 import { getCategoriesData } from "@lib/api";
 
 export default async function  Page({ params }) {
-  const categories = await getCategoriesData({ id: params.id });
+  const categories = await getCategoriesData({ name: params.name });
   const { category ,ModelsByCategory} = categories;
     return <div>
       <div className="flex flex-col justify-between items-center">

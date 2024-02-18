@@ -6,48 +6,32 @@ import Link from "next/link";
 import { Copy  , Heart, Video , Zap ,BookOpenText ,DollarSign} from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Markdown from 'react-markdown'
-
-
-
+import { getModelDetails ,getAiModelData } from "@lib/api";
 
 export default async function Page({ params    }) {
-  const categories = [
-    {
-      id: 1,
-      name: "Text to Video",
-    },
-    {
-      id: 2,
-      name: "Text to Audio",
-    },
-    {
-      id: 3,
-      name: "Text to Image",
-    },
-    {
-      id: 4,
-      name: "Open Source Models"
-    },
-  ];
-  const markdown = "## Hello World";
+  const aiModelData = await getAiModelData({ name: "Sora"});
+  const { Model } = aiModelData;
+
     return <div>
       <div className="flex flex-row  justify-start">
       <div className="font-semibold text-3xl"> 
-      Org name  &nbsp;/&nbsp; 
+         {Model.by} &nbsp;/&nbsp;{Model.title}
       </div>
       <div className="font-semibold text-3xl"> 
-      Model Name  
+       
       </div>
       <Button size="sm" variant="ghost"> 
       <Copy size={16} /> </Button> 
       <Badge variant="secondary" className="flex gap-4 w-fit  hover:bg-fuchsia-300	 hover:transition-colors" > 
       <Heart  size={16}/>560 Like </Badge>
       </div>
+      <div className="text-md mt-2">
+      {Model.description}
+      </div>
       <div className="flex flex-row  justify-between  items-center w-full mt-4">
         <div className="flex flex-row  gap-2">
-       {categories.map((category) => (
+       {Model.categories.map((category) => (
          <Link href={`/categories/${category.id}`} key={category.id} >
-          {/* //TODO: Add Icon */}
           <Badge variant="primary" className="flex gap-4 w-fit" >
            {category.name}
         </Badge>
@@ -65,13 +49,13 @@ export default async function Page({ params    }) {
   <Tabs defaultValue="description" className="">
   <TabsList>
     <TabsTrigger value="description">Description</TabsTrigger>
-    <TabsTrigger value="about">About </TabsTrigger>
+    <TabsTrigger value="about">About {Model.by} </TabsTrigger>
     <TabsTrigger value="example">Example </TabsTrigger>
 
   </TabsList>
-  <TabsContent value="description"><Markdown>{markdown}</Markdown></TabsContent>
-  <TabsContent value="about">about</TabsContent>
-  <TabsContent value="example">example</TabsContent>
+  <TabsContent value="description"><Markdown>{Model.largeDescription}</Markdown></TabsContent>
+  <TabsContent value="about"><Markdown>{Model.aboutCreator}</Markdown></TabsContent>
+  <TabsContent value="example"> </TabsContent>
 
 </Tabs>
 
@@ -79,19 +63,14 @@ export default async function Page({ params    }) {
     </div>
   }
 
-  export async function getStaticPaths() {
-    return { 
-      // props: { source: mdxSource },
-      fallback: true,   
-       paths: [
-      // Object variant:
-      { params: { id: '123' } },
-    ], }
-  }
+  // export async function getStaticPaths() {
+  //   return { 
+  //     // props: { source: mdxSource },
+  //     fallback: true,   
+  //      paths: [
+  //     // Object variant:
+  //     { params: { name: '123' } },
+  //   ], }
+  // }
 
-//   // getStaticProps.js
-// export async function getStaticProps({ params }) {
-//   // const res = await fetch(`https://example.com/api/data/${params.id}`);
-//   // const data = await res.json();
-//   return { props: { markdown : "## Hello World"} };
-// }
+//   // getStaticProps.

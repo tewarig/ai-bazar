@@ -2,6 +2,11 @@
 const nextConfig = {
     images: {
         domains: ['utfs.io'],
+    },
+    logging: {
+        fetches: {
+            fullUrl: true
+        }
     }
 };
 

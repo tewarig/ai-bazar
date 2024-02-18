@@ -17,12 +17,14 @@ import {
 import Navbar from '@/components/ui/navbar';
 import  CategoriesCard  from '@/components/ui/categoriesCard';
 import ModelCard from '@/components/ui/modelCard';
-import { getHomeData } from "@lib/api";
+import { getHomeData ,getAiModelData ,getModelDetails } from "@lib/api";
 
 
 
 export default async function Home() {
   const data  = await getHomeData();
+
+  
    if(!data) return null;
   const { topCategories , featuredCategories} = data;
 
