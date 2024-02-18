@@ -7,24 +7,24 @@ export async function GET(request) {
     {
     id: 1,
     icon: "FileVideo",
-    title: "Text to Video",
+    title: "TextToVideo",
     description : "Convert text to video"
     },
     {
      id: 2,
      icon: "AudioLines",
-     title: "Text to Audio",
+     title: "TextToAudio",
      description : "Convert text to audio"
     },{
       id: 3,
       icon:  "Images",
-      title: "Text to Image",
+      title: "TextToImage",
       description : "Convert text to image"
     },
     {
       id: 4,
       icon: "Images",
-      title: "Open Source Models",
+      title: "OpenSource",
       description: "Top Free Models",
     }
   ]

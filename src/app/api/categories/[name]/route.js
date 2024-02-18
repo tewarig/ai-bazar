@@ -4,9 +4,13 @@ import { Categories ,Models} from "../../constants";
 
 // To handle a GET request to /api
 export async function GET(request , context) {
-  const { params: { id } } = context;
-  const category = Categories.find((category) => category.id === parseInt(id));
-  const ModelsByCategory = Models.filter((model) => model.categories.includes(category.name));
+  const { params: { name } } = context;
+  const category = Categories.find((category) => category.name?.toLowerCase() === name?.toLowerCase());
+  const ModelsByCategory = Models.filter((model) =>  { 
+    const categories =  model.categories.map((c) => c.name?.toLowerCase());
+    const includes  =  categories.includes(name?.toLowerCase());
+   return includes;
+  } );
   
   if (!category) {
     return NextResponse.error("Category not found", { status: 404 });

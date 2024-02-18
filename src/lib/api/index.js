@@ -3,6 +3,7 @@ import { API } from '@constants/api';
 const getHomeData = async () => {
         const res = await fetch(API.GET_HOME_DATA,{
             next: {   cache: "no-store",
+            revalidate: 1,
         } 
         });
         
@@ -15,6 +16,7 @@ const getHomeData = async () => {
 const getCategoriesData = async ({ name}) => {
     const res = await fetch(`${API.GET_CATEGORIES_DATA}/${name}`,{
         next: {   cache: "no-store",
+        revalidate: 1,
     } 
     });
     if(!res.ok){

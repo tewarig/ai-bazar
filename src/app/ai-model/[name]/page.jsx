@@ -31,7 +31,7 @@ export default async function Page({ params    }) {
       <div className="flex flex-row  justify-between  items-center w-full mt-4">
         <div className="flex flex-row  gap-2">
        {Model.categories.map((category) => (
-         <Link href={`/categories/${category.id}`} key={category.id} >
+         <Link href={`/categories/${category.name}`} key={category.id} >
           <Badge variant="primary" className="flex gap-4 w-fit" >
            {category.name}
         </Badge>
