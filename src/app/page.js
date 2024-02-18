@@ -22,9 +22,8 @@ import { getHomeData } from "@lib/api";
 
 
 export default async function Home() {
- 
   const data  = await getHomeData();
-  if(!data) return null;
+   if(!data) return null;
   const { topCategories , featuredCategories} = data;
 
   return (
@@ -34,7 +33,7 @@ export default async function Home() {
      <div className="py-8 flex flex-wrap">
       {
         topCategories.map((category) => (
-          <CategoriesCard key={category.id}  categoryIconName={category.icon} title={category.title} description={category.description} />
+          <CategoriesCard key={category.id} categoryId={category.id} categoryIconName={category.icon} title={category.title} description={category.description} />
         ))
       }
      </div>
@@ -47,7 +46,7 @@ export default async function Home() {
           <div className="hover:cursor-pointer hover:underline-offset-8"> see more</div>
           </div>
          <div className="py-8 flex flex-wrap gap-2">
-          {category.top3Models.map((model)=>( <ModelCard  key={model.id} name={model.title} description={model.description} imageUrl={model.imageUrl} />
+          {category.top3Models.map((model)=>( <ModelCard  id={model.id} key={model.id} name={model.title} description={model.description} imageUrl={model.imageUrl} />
           ))}
 
          </div>

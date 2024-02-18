@@ -14,7 +14,7 @@ export async function GET(request , context) {
   if(!ModelsByCategory){
     return NextResponse.error("Models not found", { status: 404 });
   }
-  return NextResponse.json({ ModelsByCategory }, { status: 200 });
+  return NextResponse.json({category , ModelsByCategory }, { status: 200 });
 }
 
 // To handle a POST request to /api

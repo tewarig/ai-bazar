@@ -6,10 +6,19 @@ const getHomeData = async () => {
         });
         
         if (!res.ok) {
-        //   throw new Error('Failed to fetch data')
           return null;
         }
         return res.json();      
 }
 
-export { getHomeData };
+const getCategoriesData = async ({ id}) => {
+    const res = await fetch(`${API.GET_CATEGORIES_DATA}/${id}`,{
+        next: { revalidate: 1 } 
+    });
+    if(!res.ok){
+        return null;
+    }
+    return res.json();
+}
+
+export { getHomeData ,getCategoriesData };
