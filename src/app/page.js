@@ -24,6 +24,7 @@ import { getHomeData } from "@lib/api";
 export default async function Home() {
  
   const { topCategories , featuredCategories}  = await getHomeData();
+  if(!topCategories || !featuredCategories) return null;
 
   return (
    <div> 
