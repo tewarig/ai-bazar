@@ -1,6 +1,7 @@
 import CategoriesCard from "@/components/ui/categoriesCard";
 import ModelCard from "@/components/ui/modelCard";
 import { getHomeData } from "@lib/api";
+import Link from "next/link";
 
 export default async function Home() {
   const data = await getHomeData();
@@ -28,10 +29,12 @@ export default async function Home() {
         <div key={category.id}>
           <div className="flex  justify-between items-center">
             <div className="font-semibold text-3xl"> {category.name} </div>
-            <div className="hover:cursor-pointer hover:underline-offset-8">
-              {" "}
-              see more
-            </div>
+            <Link href={`/categories/${category.name}`}>
+              <div className="hover:cursor-pointer hover:underline hover:underline-offset-8">
+                {" "}
+                See More
+              </div>
+            </Link>
           </div>
           <div className="py-8 flex flex-wrap gap-2">
             {category.top3Models.map((model) => (
