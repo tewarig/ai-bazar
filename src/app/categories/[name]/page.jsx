@@ -1,5 +1,4 @@
 import ModelCard from "@/components/ui/modelCard";
-import { humanize } from "@/lib/utils";
 import { getCategoriesData } from "@lib/api";
 
 export default async function  Page({ params }) {

@@ -115,7 +115,10 @@ const Models =
         by: "Midjourney",
         description: "Best in class text generation model",
         imageUrl: "https://utfs.io/f/693c4e37-130e-4bbf-8c1a-bef2b6c87977-bkva19.png",
-        categories: [ "Midjourney",   {
+        categories: [ {
+          id: 8,
+          name: "Midjourney"
+        },   {
           id: 3,
           name: "TextToImage"
         },{
