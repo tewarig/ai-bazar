@@ -52,10 +52,21 @@ const getAllMetaData = async () => {
   }
   return res.json();
 };
+
+const getModels = async () => {
+    const res = await fetch(`${API.GET_ALL_MODELS}`, {
+        next: { cache: "no-store", revalidate: 1 },
+    });
+    if (!res.ok) {
+        return null;
+    }
+    return res.json();
+};
 export {
   getHomeData,
   getCategoriesData,
   getModelDetails,
   getAiModelData,
   getAllMetaData,
+  getModels,
 };
