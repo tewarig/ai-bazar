@@ -1,8 +1,7 @@
-import * as React from "react"
-import { ChevronRight } from "lucide-react"
+import * as React from "react";
+import { ChevronRight } from "lucide-react";
 
-import { cn, getValidChildren } from "@/lib/utils"
-
+import { cn, getValidChildren } from "@/lib/utils";
 
 export const Breadcrumb = React.forwardRef(
   (
@@ -15,14 +14,14 @@ export const Breadcrumb = React.forwardRef(
     },
     forwardedRef
   ) => {
-    const validChildren = getValidChildren(children)
+    const validChildren = getValidChildren(children);
     const clones = validChildren.map((child, index) => {
       return React.cloneElement(child, {
         addSeparator,
         separator,
         isLastChild: validChildren.length === index + 1,
-      })
-    })
+      });
+    });
 
     return (
       <nav
@@ -33,11 +32,10 @@ export const Breadcrumb = React.forwardRef(
       >
         <ol className="flex items-center">{clones}</ol>
       </nav>
-    )
+    );
   }
-)
-Breadcrumb.displayName = "Breadcrumb"
-
+);
+Breadcrumb.displayName = "Breadcrumb";
 
 export const BreadcrumbItem = React.forwardRef(
   (
@@ -52,20 +50,20 @@ export const BreadcrumbItem = React.forwardRef(
     },
     forwardedRef
   ) => {
-    const validChildren = getValidChildren(children)
+    const validChildren = getValidChildren(children);
     const clones = validChildren.map((child) => {
       if (child.type === BreadcrumbLink) {
-        return React.cloneElement(child, { isCurrentPage })
+        return React.cloneElement(child, { isCurrentPage });
       }
 
       if (child.type === BreadcrumbSeparator) {
         return React.cloneElement(child, {
           children: separator || child.props.children,
-        })
+        });
       }
 
-      return child
-    })
+      return child;
+    });
 
     return (
       <li
@@ -78,38 +76,40 @@ export const BreadcrumbItem = React.forwardRef(
           <BreadcrumbSeparator>{separator}</BreadcrumbSeparator>
         )}
       </li>
-    )
+    );
   }
-)
-BreadcrumbItem.displayName = "BreadcrumbItem"
+);
+BreadcrumbItem.displayName = "BreadcrumbItem";
 
+export const BreadcrumbLink = React.forwardRef(
+  ({ className, as: asComp, isCurrentPage, ...props }, forwardedRef) => {
+    const Comp = isCurrentPage ? "span" : asComp || "a";
 
-export const BreadcrumbLink = React.forwardRef(({ className, as: asComp, isCurrentPage, ...props }, forwardedRef) => {
-  const Comp = (isCurrentPage ? "span" : asComp || "a")
+    return (
+      <Comp
+        className={cn(
+          "text-sm font-medium underline-offset-4 aria-[current]:opacity-60 [&:not([aria-current])]:hover:underline",
+          className
+        )}
+        aria-current={isCurrentPage ? "page" : undefined}
+        {...props}
+        ref={forwardedRef}
+      />
+    );
+  }
+);
+BreadcrumbLink.displayName = "BreadcrumbLink";
 
-  return (
-    <Comp
-      className={cn(
-        "text-sm font-medium underline-offset-4 aria-[current]:opacity-60 [&:not([aria-current])]:hover:underline",
-        className
-      )}
-      aria-current={isCurrentPage ? "page" : undefined}
-      {...props}
-      ref={forwardedRef}
-    />
-  )
-})
-BreadcrumbLink.displayName = "BreadcrumbLink"
-
-
-export const BreadcrumbSeparator = React.forwardRef(({ className, ...props }, forwardedRef) => {
-  return (
-    <span
-      className={cn("mx-2 opacity-50", className)}
-      role="presentation"
-      {...props}
-      ref={forwardedRef}
-    />
-  )
-})
-BreadcrumbSeparator.displayName = "BreadcrumbSeparator"
+export const BreadcrumbSeparator = React.forwardRef(
+  ({ className, ...props }, forwardedRef) => {
+    return (
+      <span
+        className={cn("mx-2 opacity-50", className)}
+        role="presentation"
+        {...props}
+        ref={forwardedRef}
+      />
+    );
+  }
+);
+BreadcrumbSeparator.displayName = "BreadcrumbSeparator";
