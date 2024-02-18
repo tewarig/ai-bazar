@@ -2,13 +2,21 @@
 import React, { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Heart } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
+
 
 function LikeButton({ likeCount }) {
   const [likes, setLikes] = useState(parseInt(likeCount));
+  const { toast } = useToast();
+
   const isLiked = likes !== likeCount;
   const onClick = () => {
     if (!isLiked) {
       setLikes(likes + 1);
+      toast({
+        title: "Liked",
+        description: "You liked this model",
+      });
     }
   };
   return (

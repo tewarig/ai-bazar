@@ -12,6 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Markdown from "react-markdown";
 import { getAiModelData } from "@lib/api";
 import LikeButton from "../comp/LikeButton";
+import CopyButton from "../comp/CopyButton";
 
 export default async function Page({ params }) {
   const aiModelData = await getAiModelData({
@@ -30,9 +31,7 @@ export default async function Page({ params }) {
           {Model.by} &nbsp;/&nbsp;{Model.title}
         </div>
         <div className="font-semibold text-3xl"></div>
-        <Button size="sm" variant="ghost">
-          <Copy size={16} />{" "}
-        </Button>
+         <CopyButton text={Model.by+ " " + Model.title}/>
         <LikeButton likeCount={Model.likes} />
       
       </div>

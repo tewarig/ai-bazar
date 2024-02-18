@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/ui/navbar";
 import { cn } from "@/lib/utils";
 import CommandModalWrapper from "@/components/ui/commandModalWrapper";
+import { Toaster } from "@/components/ui/toaster"
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -17,6 +19,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <div className="px-32 pt-8"> {children}</div>
         <CommandModalWrapper />
+        <Toaster />
       </body>
     </html>
   );
