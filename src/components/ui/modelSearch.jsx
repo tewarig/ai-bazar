@@ -24,7 +24,7 @@ function ModelSearch({ models, categories }) {
   const [searchText, setSearchText] = React.useState("");
   const handleChange = ({ changedValue, value }) => {
     if (changedValue === FILTERS.SORT_BY) {
-      let finalValue = [];
+      let finalValue = models;
       if (selectedCategory) {
         finalValue = models.filter((model) => {
           const categoriesArray = model.categories.map((c) =>
