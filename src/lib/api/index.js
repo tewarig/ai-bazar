@@ -48,4 +48,16 @@ const getAiModelData = async ({ name }) => {
     // }
     return  await res.json();
 }
-export { getHomeData ,getCategoriesData,getModelDetails,getAiModelData };
+
+const getAllMetaData = async () => {
+    const res = await fetch(API.GET_ALL_META_DATA,{
+        next: {   cache: "no-store",
+        revalidate: 1,
+    } 
+    });
+    if(!res.ok){
+        return null;
+    }
+    return res.json();
+}
+export { getHomeData ,getCategoriesData,getModelDetails,getAiModelData ,getAllMetaData };

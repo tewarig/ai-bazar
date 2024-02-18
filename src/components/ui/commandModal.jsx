@@ -23,34 +23,11 @@ import {
   CommandShortcut,
 } from "@/components/ui/command"
 
-export  default function CommandWrapper() {
+
+export  default  function CommandModal({ categories , aiModels }) {
   const router = useRouter()
   const [open, setOpen] = React.useState(false)
   const [search, setSearch] = React.useState("")
-  const [categories , setCategories] = React.useState([{
-    id: 1,
-    name: "Text to Video",
-  }, {
-    id: 2,
-    name: "Text to Audio",
-  }, {
-    id: 3,
-    name: "Text to Image",
-  }, {
-    id: 4,
-    name: "Open Source Models",
-  }]);
-  const [aiModels , setAiModels] = React.useState([{
-    id: 1,
-    name : "sora"
-  },{
-    id: 2,
-    name : "gpt-3"
-  },{
-    id: 3,
-    name : "gpt-4"
-  }
-]);
 
   React.useEffect(() => {
     const down = (e) => {
@@ -67,15 +44,13 @@ export  default function CommandWrapper() {
   }, [])
 
 
-  console.log("search", search);
   const handleItemSelect = ({type , name ,id}) => {
     setOpen((open) => !open)
     if(type === "category"){
-      router.push("/categories/"+id);
-      console.log("category selected", name);
+      router.push("/categories/"+name);
     }
     if(type === "model"){
-      router.push("/ai-model/"+id);
+      router.push("/ai-model/"+name);
       console.log("model selected", name);
     }
     if(type === "search"){
@@ -93,10 +68,10 @@ export  default function CommandWrapper() {
         <CommandList>
           <CommandSeparator />
           <CommandGroup heading="Categories">
-            {categories.map((category) => (
+            {categories?.map((category) => (
               <CommandItem key={category.id} 
               onSelect={()=>{
-                handleItemSelect({type: "category" ,id: category.id })
+                handleItemSelect({type: "category" ,name: category.name })
               }}
               >
                 <span>{category.name}</span>
@@ -104,10 +79,10 @@ export  default function CommandWrapper() {
             ))}
           </CommandGroup>
           <CommandGroup heading="AI Models">
-            {aiModels.map((model) => (
+            {aiModels?.map((model) => (
               <CommandItem key={model.id} 
               onSelect={()=>{
-                handleItemSelect({type: "model" ,id: model.id })
+                handleItemSelect({type: "model" ,name: model.name })
               }}
               >
                 <span>{model.name}</span>

@@ -2,8 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/navbar";
 import { cn } from "@/lib/utils";
-import CommandWrapper from "@/components/ui/commandWrapper";
-
+import CommandModalWrapper from "@/components/ui/commandModalWrapper";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -17,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className={cn(inter.className)}>
         <Navbar/>
         <div className="px-32 pt-8"> {children}</div>
-        <CommandWrapper />
+        <CommandModalWrapper />
        </body>
     </html>
   );

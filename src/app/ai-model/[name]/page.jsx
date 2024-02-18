@@ -6,10 +6,10 @@ import Link from "next/link";
 import { Copy  , Heart, Video , Zap ,BookOpenText ,DollarSign} from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Markdown from 'react-markdown'
-import { getModelDetails ,getAiModelData } from "@lib/api";
+import {  getAiModelData } from "@lib/api";
 
 export default async function Page({ params    }) {
-  const aiModelData = await getAiModelData({ name: "Sora"});
+  const aiModelData = await getAiModelData({ name: params.name.toString().trim() });
   const { Model } = aiModelData;
 
     return <div>

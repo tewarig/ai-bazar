@@ -13,7 +13,7 @@ import {
 
 function ModelCard({ name , description , imageUrl , id}) {
   return (
-    <Link href={`/ai-model/${id}`}>
+    <Link href={`/ai-model/${name}`}>
     <Card className={cn("w-[380px]")}>
     <CardHeader>
       <CardTitle>{name} </CardTitle>
