@@ -13,7 +13,7 @@ export default async function Home() {
     <div>
       <div>
         <div className="font-semibold text-3xl"> Top categories </div>
-        <div className="py-8 flex flex-wrap">
+        <div className="py-8 flex flex-wrap gap-8 items-center">
           {topCategories.map((category) => (
             <CategoriesCard
               key={category.id}
