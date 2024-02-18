@@ -17,59 +17,40 @@ import {
 import Navbar from '@/components/ui/navbar';
 import  CategoriesCard  from '@/components/ui/categoriesCard';
 import ModelCard from '@/components/ui/modelCard';
+import { getHomeData } from "@lib/api";
 
 
-export default function Home() {
+
+export default async function Home() {
  
-  const categories = [
-    {
-    id: 1,
-    icon: <FileVideo/>,
-    title: "Text to Video",
-    description : "Convert text to video"
-    },
-    {
-     id: 2,
-     icon: <AudioLines/>,
-     title: "Text to Audio",
-     description : "Convert text to audio"
-    },{
-      id: 3,
-      icon:  <Images/>,
-      title: "Text to Image",
-      description : "Convert text to image"
-    },
-    {
-      id: 4,
-      icon: <Images/>,
-      title: "Open Source Models",
-      description: "Top Free Models",
-    }
-  ]
+  const { topCategories , featuredCategories}  = await getHomeData();
+
   return (
    <div> 
     <div>
      <div className="font-semibold text-3xl"> Top categories </div>
      <div className="py-8 flex flex-wrap">
       {
-        categories.map((category) => (
+        topCategories.map((category) => (
           <CategoriesCard key={category.id}  categoryIconName={category.icon} title={category.title} description={category.description} />
         ))
       }
      </div>
     </div>
-    <div>
-      <div className="flex  justify-between items-center">
-      <div className="font-semibold text-3xl"> Trending Models </div>
-      <div className="hover:cursor-pointer hover:underline-offset-8"> see more</div>
-      </div>
-     <div className="py-8 flex flex-wrap gap-2">
-      <ModelCard name="Sora" description="Make long Videos upto 1 min" imageUrl="https://utfs.io/f/4b3e5af2-4937-4f96-89d9-3a5b36382caa-23sln.avif" />
-      <ModelCard name="Sora" description="Make long Videos upto 1 min" imageUrl="https://utfs.io/f/4b3e5af2-4937-4f96-89d9-3a5b36382caa-23sln.avif" />
-      <ModelCard name="Sora" description="Make long Videos upto 1 min" imageUrl="https://utfs.io/f/4b3e5af2-4937-4f96-89d9-3a5b36382caa-23sln.avif" />
+    {
+        featuredCategories.map((category)=>( 
+        <div key={category.id}>
+          <div className="flex  justify-between items-center">
+          <div className="font-semibold text-3xl"> {category.name} </div>
+          <div className="hover:cursor-pointer hover:underline-offset-8"> see more</div>
+          </div>
+         <div className="py-8 flex flex-wrap gap-2">
+          {category.top3Models.map((model)=>( <ModelCard  key={model.id} name={model.title} description={model.description} imageUrl={model.imageUrl} />
+          ))}
 
-     </div>
-    </div>
+         </div>
+        </div>))
+    }
    </div>
   );
 }
