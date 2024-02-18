@@ -21,6 +21,7 @@ export default async function Home() {
               categoryIconName={category.icon}
               title={category.title}
               description={category.description}
+              icon={category.icon}
             />
           ))}
         </div>
