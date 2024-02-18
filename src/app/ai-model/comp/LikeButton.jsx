@@ -5,6 +5,7 @@ import { Heart } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
 
+
 function LikeButton({ likeCount }) {
   const [likes, setLikes] = useState(parseInt(likeCount));
   const { toast } = useToast();
@@ -17,6 +18,10 @@ function LikeButton({ likeCount }) {
         title: "Liked",
         description: "You liked this model",
       });
+    }else {
+        toast({
+            title: "You have already liked this model",
+          });
     }
   };
   return (
