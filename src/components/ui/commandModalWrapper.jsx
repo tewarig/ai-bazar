@@ -5,7 +5,7 @@ import CommandModal from  "./commandModal";
 async function CommandModalWrapper() {
  const data = await getAllMetaData();
   return (
-    <CommandModal categories={data.categories}  aiModels={data.aiModels} />
+    <CommandModal categories={data?.categories}  aiModels={data?.aiModels} />
   )
 }
 
