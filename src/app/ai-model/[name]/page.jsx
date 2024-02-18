@@ -11,12 +11,13 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Markdown from "react-markdown";
 import { getAiModelData } from "@lib/api";
+import LikeButton from "../comp/LikeButton";
 
 export default async function Page({ params }) {
   const aiModelData = await getAiModelData({
     name: params.name.toString().trim(),
   });
-  
+
   if (!aiModelData) {
     return null;
   }
@@ -32,13 +33,8 @@ export default async function Page({ params }) {
         <Button size="sm" variant="ghost">
           <Copy size={16} />{" "}
         </Button>
-        <Badge
-          variant="secondary"
-          className="flex gap-4 w-fit  hover:bg-fuchsia-300	 hover:transition-colors"
-        >
-          <Heart size={16} />
-          560 Like{" "}
-        </Badge>
+        <LikeButton likeCount={Model.likes} />
+      
       </div>
       <div className="text-md mt-2">{Model.description}</div>
       <div className="flex flex-row  justify-between  items-center w-full mt-4">
