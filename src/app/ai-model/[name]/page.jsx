@@ -16,6 +16,10 @@ export default async function Page({ params }) {
   const aiModelData = await getAiModelData({
     name: params.name.toString().trim(),
   });
+  
+  if (!aiModelData) {
+    return null;
+  }
   const { Model } = aiModelData;
 
   return (
