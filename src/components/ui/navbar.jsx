@@ -11,12 +11,13 @@ import {
   BreadcrumbLink,
 } from "@/components/ui/breadCrumbs";
 
+const DISALLOWED_PATHS = ["categories", "404"];
 export default function Navbar() {
   const [state, setState] = React.useState(false);
   const pathName = usePathname();
   const breadcrumbArray = pathName
     .split("/")
-    .map((item) => decodeURI(item.trim()));
+    .map((item) => decodeURI(item.trim())).filter((item) => !DISALLOWED_PATHS.includes(item));
   const showBreadCrumb = breadcrumbArray.length > 2;
 
   return (

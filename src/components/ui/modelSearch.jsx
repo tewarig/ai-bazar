@@ -103,13 +103,13 @@ function ModelSearch({ models, categories }) {
   };
   return (
     <div>
-      <div className=" flex  justify-between gap-4">
+      <div className=" flex  justify-between gap-4 mt-4">
         <Input
           placeholder="Search by Model Name"
           value={searchText}
           onChange={handleSearch}
         />
-        {categories.length > 0 && (
+        {categories && (
           <Select
             value={selectedCategory}
             onValueChange={handleSelectValueChange}
