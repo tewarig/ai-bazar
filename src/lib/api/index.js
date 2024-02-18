@@ -5,9 +5,10 @@ const getHomeData = async () => {
             next: { revalidate: 1 } 
         });
         
-        // if (!res.ok) {
-        //   throw new Error('Failed to fetch data')
-        // }
+        if (!res.ok) {
+          throw new Error('Failed to fetch data')
+          return null;
+        }
         return res.json();      
 }
 
