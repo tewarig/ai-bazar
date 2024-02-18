@@ -3,19 +3,23 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from 'next/navigation'
 import { Menu, Search } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn  , humanize} from "@/lib/utils"
+
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+} from "@/components/ui/breadCrumbs"
 
 
 export default function Navbar() {
   const [state, setState] = React.useState(false)
   const pathName = usePathname();
-  console.log(pathName);
-
-  const menus = [
-    // { title: "Home", path: "/" },
-  ]
-
+  const breadcrumbArray = pathName.split("/").map((item) => decodeURI(item.trim()));
+  const showBreadCrumb = breadcrumbArray.length > 2;
+  
   return (
+    <div className="  flex flex-col">
     <nav className="bg-white w-full border-b md:border-0  sticky">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -49,5 +53,27 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+    <div className="mx-32 my-4">
+    {showBreadCrumb &&(<Breadcrumb>
+     {
+      breadcrumbArray.map((item, index) => {
+        if(index === 0) return null;
+        if (index === breadcrumbArray.length - 1) {
+          return (
+            <BreadcrumbItem key={index} isCurrentPage>
+              <BreadcrumbLink href={`/${item}`}>{item}</BreadcrumbLink>
+            </BreadcrumbItem>
+          )
+        }
+        return (
+          <BreadcrumbItem key={index}>
+            <BreadcrumbLink href={`/${item}`}>{humanize(item)}</BreadcrumbLink>
+          </BreadcrumbItem>
+        )
+      })
+     }
+    </Breadcrumb>)}
+    </div>
+    </div>
   )
 }
