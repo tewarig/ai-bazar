@@ -29,31 +29,23 @@ const getModelDetails = async ({ name }) => {
         revalidate: 1,
     } 
     });
-    console.log("url",`${API.GET_MODEL_DETAILS}/${name}`);
-    console.log(res);
     if(!res.ok){
         return null;
     }
     const data = res.json();
-    console.log("res",data);
     return data;
-    // return res.json();
 }
 
 const getAiModelData = async ({ name }) => {
-    console.log("called1");
     const res = await fetch(`${API.GET_MODEL_DETAILS}/${name}`,{
         next: {   cache: "no-store",
         revalidate: 1,
     } 
     });
-    console.log("called2");
-    console.log("res",res);
     // if(!res.ok){
     //     console.log("not okay");
     //     return null;
     // }
-    console.log("OK")
     return  await res.json();
 }
 export { getHomeData ,getCategoriesData,getModelDetails,getAiModelData };
