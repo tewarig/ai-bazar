@@ -83,20 +83,6 @@ export default function CommandModal({ categories, aiModels }) {
               </CommandItem>
             ))}
           </CommandGroup>
-          <CommandGroup heading="Action">
-            <CommandItem key="search">
-              <span>
-                Search <span className="font-bold">{search}</span>&nbsp; in AI
-                Bazar
-              </span>
-            </CommandItem>
-            <CommandItem key="add-model">
-              <span>
-                Submit <span className="font-bold">{search}</span>&nbsp; in AI
-                Bazar as a model
-              </span>
-            </CommandItem>
-          </CommandGroup>
         </CommandList>
       </CommandDialog>
     </>
