@@ -46,7 +46,7 @@ const Models = [
     views: 231,
     launchDate: 1705604640,
     imageUrl:
-      "https://utfs.io/f/375a64f4-b7ca-4924-aa5a-edaacfa197e7-y9uhda.png",
+      "https://utfs.io/f/cc5d2943-5dc7-48af-91ea-f81113359a47-sdoail.png",
     categories: [
       {
         id: 3,
@@ -172,7 +172,7 @@ const Models = [
     by: "Midjourney",
     description: "Best in class text generation model",
     imageUrl:
-      "https://utfs.io/f/693c4e37-130e-4bbf-8c1a-bef2b6c87977-bkva19.png",
+      "https://utfs.io/f/7423cb12-4964-4aeb-840c-e9ce8b60571c-vpscl1.png",
     categories: [
       {
         id: 8,
