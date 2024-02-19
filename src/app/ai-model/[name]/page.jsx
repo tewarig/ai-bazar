@@ -1,32 +1,23 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import {
-  Zap,
-  BookOpenText,
-  DollarSign,
-} from "lucide-react";
+import { Zap, BookOpenText, DollarSign } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Markdown from "react-markdown";
 import { getAiModelData } from "@lib/api";
 import LikeButton from "../comp/LikeButton";
 import CopyButton from "../comp/CopyButton";
 
- 
-export async function generateMetadata(
-  { params }
-){
-   const aiModelData = await getAiModelData({
+export async function generateMetadata({ params }) {
+  const aiModelData = await getAiModelData({
     name: params.name.toString().trim(),
   });
 
   return {
     title: decodeURI(params.name),
     description: aiModelData.description,
-  }
+  };
 }
- 
-
 
 export default async function Page({ params }) {
   const aiModelData = await getAiModelData({
@@ -39,19 +30,18 @@ export default async function Page({ params }) {
   const { Model } = aiModelData;
 
   return (
-    <div>
+    <div className="p-2">
       <div className="flex flex-row  justify-start">
         <div className="font-semibold text-3xl">
           {Model.by} &nbsp;/&nbsp;{Model.title}
         </div>
         <div className="font-semibold text-3xl"></div>
-         <CopyButton text={Model.by+ " " + Model.title}/>
+        <CopyButton text={Model.by + " " + Model.title} />
         <LikeButton likeCount={Model.likes} />
-      
       </div>
       <div className="text-md mt-2">{Model.description}</div>
-      <div className="flex flex-row  justify-between flex-wrap items-center w-full mt-4">
-        <div className="flex flex-row  gap-2">
+      <div className="flex-row flex-wrap gap-4">
+        <div className="flex flex-row gap-4 p-2">
           {Model.categories.map((category) => (
             <Link href={`/categories/${category.name}`} key={category.id}>
               <Badge variant="primary" className="flex gap-4 w-fit">
@@ -60,7 +50,7 @@ export default async function Page({ params }) {
             </Link>
           ))}
         </div>
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row p-2 gap-4">
           <Button size="sm" variant="outline" className="flex gap-2">
             {" "}
             <Zap /> Try now{" "}
