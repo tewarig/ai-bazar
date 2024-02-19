@@ -188,7 +188,7 @@ function ModelSearch({ models, categories, allowToAddModel, categoryName }) {
                 }}
               >
                 {" "}
-                Add A {categoryName} Model
+                Add A  Model
               </Button>
             </SheetTrigger>
             <SheetContent>
