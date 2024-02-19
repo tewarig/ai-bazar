@@ -13,7 +13,7 @@ const Models = [
       "OpenAI is an artificial intelligence research laboratory consisting of researchers and engineers who are focused on creating artificial general intelligence (AGI), a form of AI that can understand, learn, and apply its intelligence across a wide range of tasks similar to human intelligence. Here are some key points about OpenAI:\n- **Mission**: OpenAI's mission is to ensure that artificial general intelligence (AGI) benefits all of humanity. They aim to achieve this by conducting research in AI and sharing their findings openly.\n- **Research**: OpenAI conducts cutting-edge research in various areas of artificial intelligence, including natural language processing, reinforcement learning, computer vision, robotics, and more. Their research outputs often include publications in academic journals and conferences, as well as releasing code and models to the public.\n- **Transparency and Collaboration**: OpenAI emphasizes transparency in their research and development process.",
     example:
       "No code example, currently this model is not available for public use.",
-      isFree: false,
+    isFree: false,
     likes: 432,
     users: 3422,
     views: 2311,
@@ -41,9 +41,11 @@ const Models = [
   {
     id: 2,
     title: "Gemini",
-    isFree:false,
+    isFree: false,
     by: "Google",
     description: "Google Gemini is a large-scale deep learning model ",
+    example:
+      "Code Example - \n - To send a GET request to ``` ai.bazar.vercel.app/getData ``` to get response \n - To send a GET request to ``` ai.bazar.vercel.app/credits ``` to know the balance \n - [view docs](https://www.google.com)    ",
     likes: 200,
     users: 422,
     views: 231,
@@ -72,6 +74,8 @@ const Models = [
     by: "OpenAI",
     isFree: false,
     description: "Best in class text generation model",
+    example:
+      "Code Example - \n - To send a GET request to ``` ai.bazar.vercel.app/getData ``` to get response \n - To send a GET request to ``` ai.bazar.vercel.app/credits ``` to know the balance \n - [view docs](https://www.google.com)    ",
     type: "text",
     imageUrl:
       "https://utfs.io/f/693c4e37-130e-4bbf-8c1a-bef2b6c87977-bkva19.png",
@@ -105,6 +109,8 @@ const Models = [
     type: "text",
     by: "Meta",
     description: "Free Open Source Model by META , GPT alternative",
+    example:
+      "Code Example - \n - To send a GET request to ``` ai.bazar.vercel.app/getData ``` to get response \n - To send a GET request to ``` ai.bazar.vercel.app/credits ``` to know the balance \n - [view docs](https://www.google.com)    ",
     imageUrl:
       "https://utfs.io/f/b984ef15-822f-4232-9c20-4a89d6707a98-989ilr.png",
     categories: [
@@ -138,6 +144,8 @@ const Models = [
     launchDate: 1361214240,
     by: "OpenAI",
     description: "Best in class text generation model",
+    example:
+      "Code Example - \n - To send a GET request to ``` ai.bazar.vercel.app/getData ``` to get response \n - To send a GET request to ``` ai.bazar.vercel.app/credits ``` to know the balance \n - [view docs](https://www.google.com)    ",
     imageUrl:
       "https://utfs.io/f/693c4e37-130e-4bbf-8c1a-bef2b6c87977-bkva19.png",
     categories: [
@@ -155,6 +163,8 @@ const Models = [
     id: 6,
     title: "GPT- 3.5Turbo",
     type: "text",
+    example:
+      "Code Example - \n - To send a GET request to ``` ai.bazar.vercel.app/getData ``` to get response \n - To send a GET request to ``` ai.bazar.vercel.app/credits ``` to know the balance \n - [view docs](https://www.google.com)    ",
 
     likes: 800,
     users: 10022,
@@ -179,6 +189,9 @@ const Models = [
   {
     id: 7,
     title: "Midjourney",
+    example:
+      "Code Example - \n - To send a GET request to ``` ai.bazar.vercel.app/getData ``` to get response \n - To send a GET request to ``` ai.bazar.vercel.app/credits ``` to know the balance \n - [view docs](https://www.google.com)    ",
+
     type: "image",
     likes: 1800,
     users: 4022,
@@ -207,6 +220,9 @@ const Models = [
   {
     id: 8,
     title: "Wisper",
+    example:
+      "Code Example - \n - To send a GET request to ``` ai.bazar.vercel.app/getData ``` to get response \n - To send a GET request to ``` ai.bazar.vercel.app/credits ``` to know the balance \n - [view docs](https://www.google.com)    ",
+
     type: "audio",
     likes: 200,
     users: 422,

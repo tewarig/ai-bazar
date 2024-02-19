@@ -52,21 +52,12 @@ export default async function Page({ params }) {
           ))}
         </div>
         <div className="flex flex-row gap-4">
-          <TryNow modelName={Model.title} modelBy={Model.by} type={Model.type} />
+          <TryNow
+            modelName={Model.title}
+            modelBy={Model.by}
+            type={Model.type}
+          />
 
-          <Button size="sm" variant="outline" className="flex gap-2">
-            {" "}
-            <BookOpenText /> Code Resources{" "}
-          </Button>
-          <Button
-            size="sm"
-            variant="outline"
-            className="flex gap-2"
-            disabled={Model.isFree}
-          >
-            {" "}
-            <DollarSign /> Pricing{" "}
-          </Button>
         </div>
       </div>
       <div className="border-b my-4"></div>
@@ -74,7 +65,7 @@ export default async function Page({ params }) {
         <TabsList>
           <TabsTrigger value="description">Description</TabsTrigger>
           <TabsTrigger value="about">About {Model.by} </TabsTrigger>
-          <TabsTrigger value="example">Example </TabsTrigger>
+          <TabsTrigger value="example">Docs </TabsTrigger>
         </TabsList>
         <TabsContent value="description">
           <Markdown>{Model.largeDescription}</Markdown>
@@ -82,7 +73,7 @@ export default async function Page({ params }) {
         <TabsContent value="about">
           <Markdown>{Model.aboutCreator}</Markdown>
         </TabsContent>
-        <TabsContent value="example"> </TabsContent>
+        <TabsContent value="example"> <Markdown>{Model.example}</Markdown> </TabsContent>
       </Tabs>
     </div>
   );
