@@ -103,7 +103,7 @@ function ModelSearch({ models, categories }) {
   };
   return (
     <div>
-      <div className=" flex  justify-between gap-4 mt-4">
+      <div className=" flex  justify-between gap-4 sm:mt-4 md:mt-8">
         <Input
           placeholder="Search by Model Name"
           value={searchText}
@@ -143,7 +143,7 @@ function ModelSearch({ models, categories }) {
           </SelectContent>
         </Select>
       </div>
-      <div className="py-8 grid grid-cols-3 gap-4">
+      <div className="py-8 grid sm:grid-cols-3 md:grid-cols-3 place-items-center h-screen  md:gap-4">
         {filteredModels?.map((model) => (
           <ModelCard
             id={model.id}
@@ -153,6 +153,12 @@ function ModelSearch({ models, categories }) {
             imageUrl={model.imageUrl}
           />
         ))}
+        {filteredModels.length === 0 && (
+          <div className="col-span-3 flex justify-center items-center w-[130px]">
+            <p>No models found</p>
+          </div>
+        )}
+        
       </div>
     </div>
   );
