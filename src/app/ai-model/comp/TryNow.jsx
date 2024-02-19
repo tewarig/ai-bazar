@@ -42,7 +42,7 @@ export default function TryNow({ modelName, modelBy, type }) {
       } else {
         setShowBotOutput(true);
       }
-    }, 100);
+    }, 2000);
   };
 
   const HandleBotOut = () => {
@@ -104,14 +104,14 @@ export default function TryNow({ modelName, modelBy, type }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button size="sm" variant="outline" className="flex gap-2">
+        <div size="sm" variant="outline" className="flex gap-2">
           {" "}
           <Zap /> Try now{" "}
-        </Button>
+        </div>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>Ai Chat</SheetTitle>
+          <SheetTitle>Try Now</SheetTitle>
           <SheetDescription>
             You are trying {modelName} by {modelBy}
           </SheetDescription>

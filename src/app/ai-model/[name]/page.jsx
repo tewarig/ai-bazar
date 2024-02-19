@@ -51,14 +51,6 @@ export default async function Page({ params }) {
             </Link>
           ))}
         </div>
-        <div className="flex flex-row gap-4">
-          <TryNow
-            modelName={Model.title}
-            modelBy={Model.by}
-            type={Model.type}
-          />
-
-        </div>
       </div>
       <div className="border-b my-4"></div>
       <Tabs defaultValue="description" className="">
@@ -66,6 +58,11 @@ export default async function Page({ params }) {
           <TabsTrigger value="description">Description</TabsTrigger>
           <TabsTrigger value="about">About {Model.by} </TabsTrigger>
           <TabsTrigger value="example">Docs </TabsTrigger>
+          <TryNow
+            modelName={Model.title}
+            modelBy={Model.by}
+            type={Model.type}
+          />
         </TabsList>
         <TabsContent value="description">
           <Markdown>{Model.largeDescription}</Markdown>
@@ -73,7 +70,10 @@ export default async function Page({ params }) {
         <TabsContent value="about">
           <Markdown>{Model.aboutCreator}</Markdown>
         </TabsContent>
-        <TabsContent value="example"> <Markdown>{Model.example}</Markdown> </TabsContent>
+        <TabsContent value="example">
+          {" "}
+          <Markdown>{Model.example}</Markdown>{" "}
+        </TabsContent>
       </Tabs>
     </div>
   );

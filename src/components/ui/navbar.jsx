@@ -57,7 +57,7 @@ export default function Navbar() {
         </div>
         <div className=" h-0.5 bg-gray-300"></div>
       </nav>
-      <div className="mx-32 my-4">
+      <div className="mx-14 my-4">
         {showBreadCrumb && (
           <Breadcrumb>
             {breadcrumbArray.map((item, index) => {
