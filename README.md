@@ -9,10 +9,13 @@ A simple market place to view and browse Ai model
 - View A model
 <img src="./assets/view.png"/>
 - Try it
-<img src="./assets/tryNow.png"/>
+<img src="./assets/try.png"/>
 - Browse and Search across various categories
 <img scr="./assets/browse.png">
-- 
+- Search on the go
+<img src="./assets/search.png">
+- Submit A new Model
+<img src="./assets/submit.png">
 
 ## 🚀 Demo
 
