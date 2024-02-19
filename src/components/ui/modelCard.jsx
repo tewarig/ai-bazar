@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 function ModelCard({ name, description, imageUrl, id }) {
   return (
     <Link href={`/ai-model/${name}`}>
-      <Card className={cn("w-[380px] shadow-sm")}>
+      <Card className={cn("w-[380px] shadow-sm sm:mt-2 md:mt-0")}>
         <CardHeader>
           <CardTitle>{name} </CardTitle>
           <CardDescription>{description}</CardDescription>

@@ -136,7 +136,7 @@ function ModelSearch({ models, categories, allowToAddModel, categoryName }) {
     handleChange({ changedValue: FILTERS.CATEGORY, value });
   };
   return (
-    <div>
+    <div className="">
       <div className=" flex  justify-between gap-4 sm:mt-4 md:mt-8">
         <Input
           placeholder="Search by Model Name"
@@ -242,7 +242,7 @@ function ModelSearch({ models, categories, allowToAddModel, categoryName }) {
           </Sheet>
         )}
       </div>
-      <div className="py-8 grid sm:grid-cols-3 md:grid-cols-3 place-items-center h-screen  md:gap-4">
+      <div className="sm:py-4 md:py-8 lg:py-16 flex flex-wrap  gap-8">
         {filteredModels?.map((model) => (
           <ModelCard
             id={model.id}

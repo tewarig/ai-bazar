@@ -4,7 +4,6 @@ import Navbar from "@/components/ui/navbar";
 import { cn } from "@/lib/utils";
 import CommandModalWrapper from "@/components/ui/commandModalWrapper";
 import { Toaster } from "@/components/ui/toaster";
-import Footer from "@/components/ui/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +23,6 @@ export default function RootLayout({ children }) {
         </div>
         <CommandModalWrapper />
         <Toaster />
-        <Footer />
       </body>
     </html>
   );
