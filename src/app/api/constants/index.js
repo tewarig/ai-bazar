@@ -4,6 +4,7 @@ const Models = [
     title: "Sora",
     by: "OpenAI",
     description: "Make High Quality Videos upto 1 min",
+    type: "video",
     imageUrl:
       "https://utfs.io/f/4b3e5af2-4937-4f96-89d9-3a5b36382caa-23sln.avif",
     largeDescription:
@@ -47,6 +48,7 @@ const Models = [
     users: 422,
     views: 231,
     launchDate: 1705604640,
+    type: "text",
     imageUrl:
       "https://utfs.io/f/cc5d2943-5dc7-48af-91ea-f81113359a47-sdoail.png",
     categories: [
@@ -70,6 +72,7 @@ const Models = [
     by: "OpenAI",
     isFree: false,
     description: "Best in class text generation model",
+    type: "text",
     imageUrl:
       "https://utfs.io/f/693c4e37-130e-4bbf-8c1a-bef2b6c87977-bkva19.png",
     likes: 900,
@@ -99,6 +102,7 @@ const Models = [
     users: 32,
     views: 2331,
     launchDate: 1676747040,
+    type: "text",
     by: "Meta",
     description: "Free Open Source Model by META , GPT alternative",
     imageUrl:
@@ -125,6 +129,8 @@ const Models = [
   {
     id: 5,
     title: "GPT- 3",
+    type: "text",
+
     isFree: false,
     likes: 500,
     users: 32322,
@@ -148,6 +154,8 @@ const Models = [
   {
     id: 6,
     title: "GPT- 3.5Turbo",
+    type: "text",
+
     likes: 800,
     users: 10022,
     views: 23302,
@@ -171,6 +179,7 @@ const Models = [
   {
     id: 7,
     title: "Midjourney",
+    type: "image",
     likes: 1800,
     users: 4022,
     views: 2302,
@@ -198,6 +207,7 @@ const Models = [
   {
     id: 8,
     title: "Wisper",
+    type: "audio",
     likes: 200,
     users: 422,
     views: 1302,

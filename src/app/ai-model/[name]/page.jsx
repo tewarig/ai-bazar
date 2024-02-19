@@ -52,7 +52,7 @@ export default async function Page({ params }) {
           ))}
         </div>
         <div className="flex flex-row gap-4">
-          <TryNow modelName={Model.title} modelBy={Model.by} />
+          <TryNow modelName={Model.title} modelBy={Model.by} type={Model.type} />
 
           <Button size="sm" variant="outline" className="flex gap-2">
             {" "}
