@@ -2,8 +2,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {
-  Copy,
-  Heart,
   Zap,
   BookOpenText,
   DollarSign,
@@ -13,6 +11,22 @@ import Markdown from "react-markdown";
 import { getAiModelData } from "@lib/api";
 import LikeButton from "../comp/LikeButton";
 import CopyButton from "../comp/CopyButton";
+
+ 
+export async function generateMetadata(
+  { params }
+){
+   const aiModelData = await getAiModelData({
+    name: params.name.toString().trim(),
+  });
+
+  return {
+    title: params.name,
+    description: aiModelData.description,
+  }
+}
+ 
+
 
 export default async function Page({ params }) {
   const aiModelData = await getAiModelData({
