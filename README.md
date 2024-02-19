@@ -21,6 +21,7 @@ A simple market place to view and browse Ai model
 ## 🚀 Demo
 
 Try the App: [ai-bazar](https://www.ai-bazar.xyz/)
+PageSpeed Report: [Report](https://pagespeed.web.dev/analysis/https-ai-bazar-vercel-app/5f1r6nht1z?form_factor=desktop)
 
 
 
