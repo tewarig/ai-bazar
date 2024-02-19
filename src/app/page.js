@@ -10,10 +10,9 @@ export default async function Home() {
   const { topCategories, featuredCategories } = data;
 
   return (
-    <div>
-      <div>
-        <div className="font-semibold text-3xl"> Top categories </div>
-        <div className="py-8 flex flex-wrap gap-8 items-center">
+    <div className="p-2 ">
+      <div className="">
+        <div className="flex justify-center flex-wrap gap-4 p-4 ">
           {topCategories.map((category) => (
             <CategoriesCard
               key={category.id}
@@ -29,7 +28,7 @@ export default async function Home() {
       {featuredCategories.map((category) => (
         <div key={category.id}>
           <div className="flex  justify-between items-center sm:px-4 md:px-0">
-            <div className="font-semibold text-3xl"> {category.name} </div>
+            <div className="font-semibold text-3xl p-2"> {category.name} </div>
             <Link href={`/categories/${category.name}`}>
               <div className="hover:cursor-pointer hover:underline hover:underline-offset-8">
                 {" "}
