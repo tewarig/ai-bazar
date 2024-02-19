@@ -28,7 +28,7 @@ export default async function Home() {
       </div>
       {featuredCategories.map((category) => (
         <div key={category.id}>
-          <div className="flex  justify-between items-center">
+          <div className="flex  justify-between items-center sm:px-4 md:px-0">
             <div className="font-semibold text-3xl"> {category.name} </div>
             <Link href={`/categories/${category.name}`}>
               <div className="hover:cursor-pointer hover:underline hover:underline-offset-8">
@@ -37,7 +37,7 @@ export default async function Home() {
               </div>
             </Link>
           </div>
-          <div className="py-8 flex flex-wrap gap-2">
+          <div className="sm:py-4 md:py-8 lg:py-16 flex flex-wrap gap-2">
             {category.top3Models.map((model) => (
               <ModelCard
                 id={model.id}
