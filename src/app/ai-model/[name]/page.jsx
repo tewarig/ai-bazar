@@ -21,7 +21,7 @@ export async function generateMetadata(
   });
 
   return {
-    title: params.name,
+    title: decodeURI(params.name),
     description: aiModelData.description,
   }
 }
@@ -50,7 +50,7 @@ export default async function Page({ params }) {
       
       </div>
       <div className="text-md mt-2">{Model.description}</div>
-      <div className="flex flex-row  justify-between  items-center w-full mt-4">
+      <div className="flex flex-row  justify-between flex-wrap items-center w-full mt-4">
         <div className="flex flex-row  gap-2">
           {Model.categories.map((category) => (
             <Link href={`/categories/${category.name}`} key={category.id}>
