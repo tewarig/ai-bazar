@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={cn(inter.className)}>
         <Navbar />
-        <div className="sm:pt-4 md:pt-8 sm:px-2 md:px-4 lg:px-32"> {children}</div>
+        <div className="sm:pt-4 md:pt-8 sm:px-2 md:px-4 lg:px-12"> {children}</div>
         <CommandModalWrapper />
         <Toaster />
       </body>

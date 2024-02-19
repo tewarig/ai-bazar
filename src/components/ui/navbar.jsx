@@ -17,12 +17,13 @@ export default function Navbar() {
   const pathName = usePathname();
   const breadcrumbArray = pathName
     .split("/")
-    .map((item) => decodeURI(item.trim())).filter((item) => !DISALLOWED_PATHS.includes(item));
+    .map((item) => decodeURI(item.trim()))
+    .filter((item) => !DISALLOWED_PATHS.includes(item));
   const showBreadCrumb = breadcrumbArray.length > 2;
 
   return (
     <div className="  flex flex-col">
-      <nav className="bg-white w-full border-b md:border-0  sticky">
+      <nav className="bg-white w-full border-b md:border-0   shadow-sm">
         <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link href="/">
@@ -54,6 +55,7 @@ export default function Navbar() {
             </ul>
           </div>
         </div>
+        <div className=" h-0.5 bg-gray-300"></div>
       </nav>
       <div className="mx-32 my-4">
         {showBreadCrumb && (
