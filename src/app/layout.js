@@ -3,7 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/ui/navbar";
 import { cn } from "@/lib/utils";
 import CommandModalWrapper from "@/components/ui/commandModalWrapper";
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
+import Footer from "@/components/ui/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +18,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={cn(inter.className)}>
         <Navbar />
-        <div className="sm:pt-4 md:pt-8 sm:px-2 md:px-4 lg:px-12"> {children}</div>
+        <div className="sm:pt-4 md:pt-8 sm:px-2 md:px-4 lg:px-12">
+          {" "}
+          {children}
+        </div>
         <CommandModalWrapper />
         <Toaster />
+        <Footer />
       </body>
     </html>
   );
