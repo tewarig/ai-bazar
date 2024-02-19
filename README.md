@@ -2,8 +2,17 @@
 ### Introducing ai-bazar   🐱
 <img src="./assets/home.png"/>
 
-A simple market place to view and browse Ai model
+A simple market place to view and browse Ai model 
+- Browser and view trending Ai - Models
+<img src="./assets/home.png"/>
 
+- View A model
+<img src="./assets/view.png"/>
+- Try it
+<img src="./assets/tryNow.png"/>
+- Browse and Search across various categories
+<img scr="./assets/browse.png">
+- 
 
 ## 🚀 Demo
 

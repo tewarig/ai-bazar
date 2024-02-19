@@ -53,7 +53,7 @@ export default function CommandModal({ categories, aiModels }) {
     <>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput
-          placeholder="Type a command or search..."
+          placeholder="Search..."
           value={search}
           onValueChange={setSearch}
         />
