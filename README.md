@@ -16,9 +16,9 @@ A simple market place to view and browse Ai model
 <img src="./assets/search.png">
 - Submit A new Model
 <img src="./assets/submit.png">
-
+- Load time  (0.6s🚀 ) 
+<img src="./assets/speed.png">
 ## 🚀 Demo
-
 
 Try the App: [ai-bazar](https://www.ai-bazar.xyz/)
 
