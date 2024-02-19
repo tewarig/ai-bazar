@@ -35,6 +35,10 @@ const Models = [
         id: 6,
         name: "Paid",
       },
+      {
+        id: 13,
+        name: "Trending",
+      },
     ],
   },
 
@@ -66,6 +70,10 @@ const Models = [
         id: 6,
         name: "Paid",
       },
+      {
+        id: 13,
+        name: "Trending",
+      },
     ],
   },
   {
@@ -95,6 +103,10 @@ const Models = [
       {
         id: 6,
         name: "Paid",
+      },
+      {
+        id: 15,
+        name: "Liked"
       },
     ],
   },
@@ -129,6 +141,14 @@ const Models = [
       {
         id: 4,
         name: "OpenSource",
+      },
+      {
+        id: 13,
+        name: "Trending",
+      },
+      {
+        id: 15,
+        name: "Liked"
       },
     ],
   },
@@ -215,6 +235,10 @@ const Models = [
         id: 7,
         name: "Freemium",
       },
+      {
+        id: 15,
+        name: "Liked"
+      },
     ],
   },
   {
@@ -298,6 +322,12 @@ const Categories = [
   {
     id: 12,
     name: "Video",
-  },
+  },{
+    id: 13,
+    name: "Trending",
+  },{
+    id: 15,
+    name: "Liked"
+  }
 ];
 export { Models, Categories };

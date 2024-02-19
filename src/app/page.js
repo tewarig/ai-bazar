@@ -30,7 +30,7 @@ export default async function Home() {
         <div key={category.id}>
           <div className="flex  justify-between items-center sm:px-4 md:px-0">
             <div className="font-semibold text-3xl p-2 underline">
-              {" "}
+              {category.prefix} &nbsp;
               {category.name}{" "}
             </div>
             <Link href={`/categories/${category.name}`}>
