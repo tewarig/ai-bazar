@@ -26,7 +26,7 @@ export default async function Home() {
               icon={category.icon}
             />
           ))}
-          <Link href={`/ai-models`}>
+          <Link href={`/ai-model`}>
             <CardContent className="grid gap-4 w-fit ">
               <div className=" shadow-sm flex items-center space-x-4 rounded-md border p-4 hover:cursor-pointer">
                 <Brain />
