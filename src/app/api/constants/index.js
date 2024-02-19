@@ -12,6 +12,7 @@ const Models = [
       "OpenAI is an artificial intelligence research laboratory consisting of researchers and engineers who are focused on creating artificial general intelligence (AGI), a form of AI that can understand, learn, and apply its intelligence across a wide range of tasks similar to human intelligence. Here are some key points about OpenAI:\n- **Mission**: OpenAI's mission is to ensure that artificial general intelligence (AGI) benefits all of humanity. They aim to achieve this by conducting research in AI and sharing their findings openly.\n- **Research**: OpenAI conducts cutting-edge research in various areas of artificial intelligence, including natural language processing, reinforcement learning, computer vision, robotics, and more. Their research outputs often include publications in academic journals and conferences, as well as releasing code and models to the public.\n- **Transparency and Collaboration**: OpenAI emphasizes transparency in their research and development process.",
     example:
       "No code example, currently this model is not available for public use.",
+      isFree: false,
     likes: 432,
     users: 3422,
     views: 2311,
@@ -39,6 +40,7 @@ const Models = [
   {
     id: 2,
     title: "Gemini",
+    isFree:false,
     by: "Google",
     description: "Google Gemini is a large-scale deep learning model ",
     likes: 200,
@@ -66,6 +68,7 @@ const Models = [
     id: 3,
     title: "GPT- 4",
     by: "OpenAI",
+    isFree: false,
     description: "Best in class text generation model",
     imageUrl:
       "https://utfs.io/f/693c4e37-130e-4bbf-8c1a-bef2b6c87977-bkva19.png",
@@ -91,6 +94,7 @@ const Models = [
   {
     id: 4,
     title: "Lamma",
+    isFree: true,
     likes: 1000,
     users: 32,
     views: 2331,
@@ -121,6 +125,7 @@ const Models = [
   {
     id: 5,
     title: "GPT- 3",
+    isFree: false,
     likes: 500,
     users: 32322,
     views: 23301,
@@ -147,6 +152,7 @@ const Models = [
     users: 10022,
     views: 23302,
     launchDate: 1645211040,
+    isFree: false,
     by: "OpenAI",
     description: "Best in class text generation model",
     imageUrl:
@@ -169,6 +175,7 @@ const Models = [
     users: 4022,
     views: 2302,
     launchDate: 1674068640,
+    isFree: false,
     by: "Midjourney",
     description: "Best in class text generation model",
     imageUrl:
@@ -195,6 +202,7 @@ const Models = [
     users: 422,
     views: 1302,
     launchDate: 1645211040,
+    isFree: false,
     by: "OpenAI",
     description: "Best in class Audio generation model",
     imageUrl:
