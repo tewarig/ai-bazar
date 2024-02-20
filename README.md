@@ -74,3 +74,5 @@ You are all set! Open [localhost:3000](http://localhost:3000/) to see the app.
 - ReactMarkDown
 - lucide React
 - Zod
+- clsx
+- cmdk
