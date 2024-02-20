@@ -65,7 +65,7 @@ npm run dev
 You are all set! Open [localhost:3000](http://localhost:3000/) to see the app.
 
 
-## 🙏 Open source libraries Used
+## 🙏 Open Source libraries Used
 - Next.js
 - React-hook-Form
 - Tailwind CSS
