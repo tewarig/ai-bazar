@@ -17,6 +17,8 @@ A simple market place to view and browse Ai model
 - Submit A new Model
 <img src="./assets/submit.png">
 - Load time  (0.6s🚀 ) 
+measured using pagespeed.web.dev
+used RSC and Next.js  to decrease the load time and increase performance
 <img src="./assets/speed.png">
 ## 🚀 Demo
 
