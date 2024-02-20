@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useState } from "react";
+import React, {  useState } from "react";
 import { Button } from "@/components/ui/button";
 import { TextArea } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -14,7 +14,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Zap, SendHorizontal } from "lucide-react";
+import {  SendHorizontal } from "lucide-react";
 
 export default function TryNow({ modelName, modelBy, type }) {
   const [userInput, setUserInput] = useState("");
@@ -105,8 +105,7 @@ export default function TryNow({ modelName, modelBy, type }) {
     <Sheet>
       <SheetTrigger asChild>
         <div size="sm" variant="outline" className="flex gap-2">
-          {" "}
-          <Zap /> Try now{" "}
+          Try now
         </div>
       </SheetTrigger>
       <SheetContent>
